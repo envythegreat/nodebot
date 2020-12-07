@@ -18,20 +18,19 @@ board.on('ready', function(){
   });
   console.log(led.length)
   let index = 0;
-  setInterval(()=>{
-    if(index >= led.length){
-      index = 0
-      // led[0].led.off()
-      // led[1].led.off()
-      // led[2].led.off()
-    }else {
-      led[index].led.on()
-      index ++
-    }
-    
-    if(index !== 0) {
-      console.log(index - 1)
-      led[index - 1].led.fadeOut()
-    }
-  }, 1000)
+  button.on('down', ()=>{
+    setInterval(()=>{
+      if(index >= led.length){
+        index = 0
+      }else {
+        led[index].led.on()
+        index ++
+      }
+      
+      if(index !== 0) {
+        console.log(index - 1)
+        led[index - 1].led.fadeOut()
+      }
+    }, 1000)
+  })
 });
