@@ -3,9 +3,10 @@ var board = new five.Board();
 
 board.on("ready", function() {
 
-  var lcd = new five.LCD({ controller: "PCF8574" });
-  let myName = ["E","N","V","Y"," ","T","H","E"," ","G","R","E","A","T"]
+  var lcd = new five.LCD({ controller: "PCF8574"});
+  let myName = "King Envy"
   let index = 0;
+
   setInterval(() => {
     if(index >= myName.length){
       lcd.clear()
@@ -13,5 +14,5 @@ board.on("ready", function() {
     }
     lcd.print(myName[index])
     index++
-  }, 600);
+  }, 500);
 });
